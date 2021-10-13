@@ -17,8 +17,8 @@ static int findIndex(struct station* check_station_arr, int n, char* station) {
 // Поиск времени отправления со станции
 
 int findTime(struct schedule* new_schedule,
-             char* current_station,
-             char* goal_station,
+             const char* current_station,
+             const char* goal_station,
              int current_hour,
              int current_min) {
   if ((current_hour <= -1) || (current_hour >= 24) || (current_min <= -1)) {

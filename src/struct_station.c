@@ -6,7 +6,7 @@
 //Создание станции с проверкой введения времени прибытия/отправления на станцию
 
 int inputStation(struct station* new_station,
-                 char* new_name,
+                 const char* new_name,
                  int new_hour,
                  int new_min,
                  int new_stay_min) {

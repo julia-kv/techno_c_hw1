@@ -10,11 +10,11 @@ int main() {
 
   printf("Введите количество поездов в расписании: ");
   int new_trains_number = 0;
-  
+
   if (scanf("%d", &new_trains_number) != 1) {
-      return 0;
+    return 0;
   }
-  
+
   printf("\n");
 
   if (inputSchedule(&new_schedule, new_trains_number) == 0) {
@@ -34,9 +34,9 @@ int main() {
     printf("Введите название станции, до которой нужно добраться: ");
     char* goal_station;
     goal_station = (char*)malloc(10);
-    
+
     if (scanf("%9s", goal_station) != 1) {
-        return 0;
+      return 0;
     }
 
     printf("Введите время формате часы:минуты : ");

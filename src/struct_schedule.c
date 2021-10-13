@@ -16,7 +16,11 @@ int inputSchedule(struct schedule* new_schedule, int new_trains_number) {
     for (int i = 0; i < new_trains_number; ++i) {
       printf("Введите количество остановок для поезда: ");
       int stations_numbers = 0;
-      scanf("%d", &stations_numbers);
+
+      if (scanf("%d", &stations_numbers) != 1) {
+        return 0;
+      }
+
       printf("\n");
 
       if (inputTrain(&(new_schedule->trains_arr[i]), stations_numbers) == 0) {

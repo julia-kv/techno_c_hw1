@@ -20,16 +20,25 @@ int inputTrain(struct train* new_train, int new_stations_numbers) {
       printf("Введите название станции: ");
       char* name;
       name = (char*)malloc(10);
-      scanf("%9s", name);
+
+      if (scanf("%9s", name) != 1) {
+        return 0;
+      }
 
       printf("Введите время прибытия в формате часы:минуты : ");
       int new_hour = 0;
       int new_min = 0;
-      scanf("%d:%d", &new_hour, &new_min);
+
+      if (scanf("%d:%d", &new_hour, &new_min) != 2) {
+        return 0;
+      }
 
       printf("Введите время стоянки в минутах: ");
       int new_stay_min = 0;
-      scanf("%d", &new_stay_min);
+
+      if (scanf("%d", &new_stay_min) != 1) {
+        return 0;
+      }
 
       if (inputStation(&(new_train->stations_arr[j]), name, new_hour, new_min,
                        new_stay_min) == 0) {

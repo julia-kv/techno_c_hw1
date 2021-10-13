@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "string.h"
-#include "schedule.h"
+#include "../include/schedule.h"
 
 //Поиск индекса станции в массиве станций
 

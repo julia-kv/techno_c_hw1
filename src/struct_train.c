@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-#include "schedule.h"
+#include "../include/schedule.h"
 
 //Ввод поезда
 

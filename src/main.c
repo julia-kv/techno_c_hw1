@@ -1,7 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
-#include "schedule.h"
-
+#include "../include/schedule.h"
 
 int main() {
     printf("Создайте расписание поездов\n");

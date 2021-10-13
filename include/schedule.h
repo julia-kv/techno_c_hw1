@@ -25,4 +25,4 @@ int inputSchedule(struct schedule* new_schedule, int new_trains_number);
 
 int findTime(struct schedule* new_schedule, const char *current_station, const char *goal_station, int current_hour, int current_min);
 
-static int findIndex(struct station* check_station_arr, int n, const char *station);
+static int findIndex(struct station* check_station_arr, int n, char *station);

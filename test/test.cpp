@@ -6,50 +6,42 @@ extern "C" {
 
 TEST(INPUT_STATION_TEST, right_input_test) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, 5, 5), 1);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 5, 5, 5), 1);
 }
 
 TEST(INPUT_STATION_TEST, wrong_name_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, 5, 5), 0);
+    EXPECT_EQ(inputStation(&test_station, "\n", 5, 5, 5), 0);
 }
 
 TEST(INPUT_STATION_TEST, wrong_hour_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, -1, 5, 5), 0);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", -1, 5, 5), 0);
 }
 
 TEST(INPUT_STATION_TEST, wrong_hour_input_2) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 100, 5, 5), 0);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 100, 5, 5), 0);
 }
 
 TEST(INPUT_STATION_TEST, wrong_min_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, -1, 5), 0);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 5, -1, 5), 0);
 }
 
 TEST(INPUT_STATION_TEST, right_min_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, 100, 5), 1);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 5, 100, 5), 1);
 }
 
 TEST(INPUT_STATION_TEST, wrong_timestay_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, 5, -1), 0);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 5, 5, -1), 0);
 }
 
 TEST(INPUT_STATION_TEST, right_timestay_input) {
     struct station test_station;
-    const char *station = "Kurskaya";
-    EXPECT_EQ(inputStation(&test_station, station, 5, 5, 100), 1);
+    EXPECT_EQ(inputStation(&test_station, "Kurskaya", 5, 5, 100), 1);
 }
 
 TEST(INPUT_TRAIN_TEST, wrong_input_test) {
@@ -89,7 +81,6 @@ TEST(FIND_TEST, ansver_false) {
         sprintf(str, "%d", i);
         inputStation(&(test_schedule.trains_arr[0].stations_arr[i]), str, i + 6, i * 10 , i * 10 + 10);
     }
-    char *station_first;
     const char *station_first = "0";
     const char *station_second = "3";
     EXPECT_EQ(findTime(&test_schedule, station_first, station_second, 23, 23), 0);
@@ -106,8 +97,6 @@ TEST(FIND_TEST, wrong_inputhour_test) {
         sprintf(str, "%d", i);
         inputStation(&(test_schedule.trains_arr[0].stations_arr[i]), str, i + 6, i * 10 , i * 10 + 10);
     }
-    char *station_first;
-    station_first = "0";
     const char *station_first = "0";
     const char *station_second = "3";
     EXPECT_EQ(findTime(&test_schedule, station_first, station_second, -10, 0), 0);
@@ -124,8 +113,6 @@ TEST(FIND_TEST, wrong_inputmin_test) {
         sprintf(str, "%d", i);
         inputStation(&(test_schedule.trains_arr[0].stations_arr[i]), str, i + 6, i * 10 , i * 10 + 10);
     }
-    char *station_first;
-    station_first = "0";
     const char *station_first = "0";
     const char *station_second = "3";
     EXPECT_EQ(findTime(&test_schedule, station_first, station_second, 5, -10), 0);

@@ -4,7 +4,9 @@
 
 //Поиск индекса станции в массиве станций
 
-static int findIndex(struct station* check_station_arr, int n, const char* station) {
+static int findIndex(struct station* check_station_arr,
+                     int n,
+                     const char* station) {
   for (int j = 0; j < n; ++j) {
     char* str = check_station_arr[j].station_name;
     if (strcmp(check_station_arr[j].station_name, station) == 0) {

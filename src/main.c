@@ -53,5 +53,11 @@ int main() {
     }
   }
 
+  for (int i = 0; i < new_schedule.trains_numbers; ++i) {
+    free(new_schedule.trains_arr[i].stations_arr);
+  }
+
+  free(new_schedule.trains_arr);
+
   return 1;
 }

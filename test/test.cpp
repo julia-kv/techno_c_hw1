@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "../include/schedule.h"
+#include "schedule.h"
 }
 
 TEST(INPUT_STATION_TEST, right_input_test) {

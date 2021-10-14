@@ -1,10 +1,14 @@
-#include "../include/schedule.h"
+#include "schedule.h"
 #include "stdio.h"
 #include "string.h"
 
 //Поиск индекса станции в массиве станций
 
 static int findIndex(struct station* check_station_arr, int n, char* station) {
+  if (strcmp(station, "\n") == 0 || n < 0) {
+    return 0;
+  }
+
   for (int j = 0; j < n; ++j) {
     char* str = check_station_arr[j].station_name;
     if (strcmp(check_station_arr[j].station_name, station) == 0) {
@@ -21,6 +25,10 @@ int findTime(struct schedule* new_schedule,
              const char* goal_station,
              int current_hour,
              int current_min) {
+  if (strcmp(current_station, "\n") == 0 || strcmp(goal_station, "\n") == 0) {
+    return 0;
+  }
+
   if ((current_hour <= -1) || (current_hour >= 24) || (current_min <= -1)) {
     printf("Ошибка ввода времени\n");
     return 0;
